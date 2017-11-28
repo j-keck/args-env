@@ -1,0 +1,7 @@
+(compile -s -O3 -d1 args-env.scm -j args-env)
+(compile -s args-env.import.scm -O3 -d0)
+
+(install-extension
+ 'args-env
+ '("args-env.so" "args-env.import.so")
+ '((version "1.0")))

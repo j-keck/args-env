@@ -1,0 +1,5 @@
+((license "MIT")
+  (category misc)
+  (needs srfi-1 srfi-13 srfi-37 args posix)
+  (author "Jürgen Keck")
+  (synopsis "program arguments per command-line or environment variables - on top of 'args'"))
