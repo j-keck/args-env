@@ -27,11 +27,11 @@
   ;;
   ;; it uses 'args:parse' to parse the command line arguments
   ;; and adds the arguments defined as environment-variables
-  ;; at the end of the resulting alist.
+  ;; at the end of the options.
   (define (args-env:parse args options-list . optionals)
-    (let ([from-args (args:parse args options-list optionals)]
-          [from-env  (args-env:from-env options-list)])
-      (append from-args from-env)))
+    (let ([from-env  (args-env:from-env options-list)])
+      (receive (options operands) (args:parse args options-list optionals)
+        (values (append options from-env) operands))))
 
 
 
